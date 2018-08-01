@@ -7,8 +7,7 @@ fun main(args: Array<String>) {
     val array = Array(7) { generator.nextInt(20) }
 
 
-    array.forEach { print("$it, ") } //array before sorting
-    println() //print new line
+    array.printArray()//array before sorting
 
     /**outer loop for keeping track of the unsorted partition
     the loop begins from the last index and becomes smaller as we
@@ -42,7 +41,7 @@ fun main(args: Array<String>) {
     }
 
     //print out the sorted array
-    array.forEach { print("$it, ") }
+    array.printArray()
 
     //time complexity of n²
     //unstable sorting algorithm

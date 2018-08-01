@@ -6,8 +6,7 @@ fun main(args: Array<String>) {
     val array = Array(7) { generator.nextInt(20) }
 
 
-    array.forEach { print("$it, ") } //array before sorting
-    println() //print new line
+    array.printArray() //array before sorting
 
     //beginning index for unsorted section of the array
     val firstUnsorted = 1
@@ -33,6 +32,8 @@ fun main(args: Array<String>) {
         array[j] = newElement
     }
 
-    array.forEach { print("$it, ") } //array after sorting
-    println() //print new line
+    array.printArray()//array after sorting
+
+    //time complexity of n²
+    //stable sorting algorithm
 }
