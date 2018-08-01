@@ -25,12 +25,7 @@ fun main(args: Array<String>) {
     array.forEach {
         println(it)
     }
-}
 
-fun <T> Array<T>.swap(i: Int, j: Int){
-    if (i == j) return
-
-    val temp = this[i]
-    this[i] = this[j]
-    this[j] = temp
+    //time complexity of n²
+    //stable sorting algorithm
 }
