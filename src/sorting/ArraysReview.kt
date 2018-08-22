@@ -1,3 +1,5 @@
+package sorting
+
 fun main(args: Array<String>) {
 
     val array = Array(7) {

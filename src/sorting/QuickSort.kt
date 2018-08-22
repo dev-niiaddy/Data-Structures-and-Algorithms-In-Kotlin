@@ -1,3 +1,5 @@
+package sorting
+
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -26,7 +28,7 @@ fun quickSort(input: Array<Int>, start: Int, end: Int) {
     if (end - start < 2) return //if the array has a size of 1 then is already sorted
 
     /*find the index of the pivot after sorting
-    * by calling the partition method which does the sorting based on the
+    * by calling the sorting.partition method which does the sorting based on the
     * pivot element*/
     val pivotIndex = partition(input, start, end)
 

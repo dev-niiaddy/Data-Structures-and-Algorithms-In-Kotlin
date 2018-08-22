@@ -1,9 +1,11 @@
+package sorting
+
 fun main(args: Array<String>) {
     val radixArray = intArrayOf(4725, 4586, 1330, 8792, 1594, 5729)
 
     radixArray.printArray() // array before sorting
 
-     radixSort(radixArray, 10, 4) // function for perform radix sorting on the given array
+    radixSort(radixArray, 10, 4) // function for perform radix sorting on the given array
 
     radixArray.printArray() // array after sorting
 
@@ -55,13 +57,13 @@ fun radixSingleSort(input: IntArray, position: Int, radix: Int) {
     val temp = IntArray(input.size) // temporary array for sorting
 
     /*
-     * reduce count at a given position in the array and insert it
+     * reduce count at a given position in the array and sorting.insert it
      * into it's correct index in the temp array using the adjusted counts,
-     * we insert from right to left to create stability (preserve the
+     * we sorting.insert from right to left to create stability (preserve the
      * relative positioning of duplicate items)
      */
     for (tempIndex in input.lastIndex downTo  0) {
-        temp[ --countArray[getDigit(position, input[tempIndex], radix) ] ] = input[tempIndex]
+        temp[ --countArray[getDigit(position, input[tempIndex], radix)] ] = input[tempIndex]
     }
 
     /*

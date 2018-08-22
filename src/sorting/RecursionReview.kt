@@ -1,3 +1,5 @@
+package sorting
+
 fun main(args: Array<String>) {
 
     //prints the result of the given factorial [5] in this case

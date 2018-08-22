@@ -1,3 +1,5 @@
+package sorting
+
 fun main(args: Array<String>) {
     //initialize an array of integers[ an array of size 7 last index of 6]
     val array = arrayOf(20, 35, -15, 7, 55, 1, -22)
@@ -21,7 +23,7 @@ fun main(args: Array<String>) {
 
             /**
              * if the current element is greater than the one
-             * to the right of it then swap their positions
+             * to the right of it then sorting.swap their positions
             */
             if(array[i] > array[i+1]){
                 array.swap(i, i+1)

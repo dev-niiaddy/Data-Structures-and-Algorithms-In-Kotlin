@@ -1,3 +1,5 @@
+package sorting
+
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -21,14 +23,14 @@ fun main(args: Array<String>) {
         var j = i //looping variable to traverse the sorted array from behind
 
         /*continue looping when the current element is greater than
-        * the element we want to insert and we are not at zero
+        * the element we want to sorting.insert and we are not at zero
         * then continue shifting element to the next higher index*/
         while (j > 0 && (array[j - 1] > newElement)){
             array[j] = array[j-1]
             j--
         }
         /*if loop ends then the correct insertion point has been found and
-        * created due to shifting and you can now insert the element*/
+        * created due to shifting and you can now sorting.insert the element*/
         array[j] = newElement
     }
 

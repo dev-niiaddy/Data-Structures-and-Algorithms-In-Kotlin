@@ -1,10 +1,12 @@
+package sorting
+
 fun main(args: Array<String>) {
 
     val intArray = arrayOf(2, 5, 9, 8, 2, 8, 7, 10, 4, 3)
 
     intArray.printArray() // array before sorting
 
-    countingSort(intArray, 2,  10) //count sort function call with minimum and maximum values of the array to be sorted
+    countingSort(intArray, 2, 10) //count sort function call with minimum and maximum values of the array to be sorted
 
     intArray.printArray() //array after sorting
 

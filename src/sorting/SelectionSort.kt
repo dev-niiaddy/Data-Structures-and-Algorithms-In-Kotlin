@@ -1,3 +1,5 @@
+package sorting
+
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -9,7 +11,7 @@ fun main(args: Array<String>) {
 
     array.printArray()//array before sorting
 
-    /**outer loop for keeping track of the unsorted partition
+    /**outer loop for keeping track of the unsorted sorting.partition
     the loop begins from the last index and becomes smaller as we
     traverse and sort the array
      */
@@ -27,9 +29,9 @@ fun main(args: Array<String>) {
                 greatest = i
             }
 
-            /*when i is equal to the last unsorted index swap the two values
+            /*when i is equal to the last unsorted index sorting.swap the two values
             at index greatest and lastUnsortedIndex
-            NB: look at the implementation of extension function in swap in BubbleSort.kt
+            NB: look at the implementation of extension function in sorting.swap in BubbleSort.kt
             */
             if (i == lastUnsortedIndex) {
                 array.swap(greatest, lastUnsortedIndex)

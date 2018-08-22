@@ -1,3 +1,5 @@
+package sorting
+
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -43,7 +45,7 @@ fun main(args: Array<String>) {
                 j -= gap
             }
 
-            /*insert new element at j
+            /*sorting.insert new element at j
             * if shifting occurred then j will be the insertion point for newElement
             * else j will be put where it was picked*/
             array[j] = newElement
