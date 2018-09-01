@@ -35,9 +35,8 @@ class ArrayStack<T>(capacity:Int = 10) {
     }
 
     fun printStack() {
-        for (i in top - 1 downTo 0) {
-            print("${stack[i] as T} ,")
-        }
+        for (i in top - 1 downTo 0) print("${stack[i] as T} ,")
+        println()
     }
 }
 
@@ -54,5 +53,8 @@ fun main(args: Array<String>) {
     arrayStack.push(raymond)
     arrayStack.push(amy)
 
+    arrayStack.printStack()
+    println(arrayStack.peek())
+    println("Popped: --> ${arrayStack.pop()}")
     arrayStack.printStack()
 }
