@@ -1,6 +1,6 @@
 package lists
 
-class Node<T>(private val node: T) {
+class Node<T>(val node: T) {
 
     var next: Node<T>? = null
 

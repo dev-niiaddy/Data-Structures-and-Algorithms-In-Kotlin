@@ -41,10 +41,37 @@ class DoubleLinkedList<T> {
         size++
     }
 
+    fun addBefore(add: T, before: T): Boolean {
+
+        if (head == null) return false
+
+        val newNode = DoubleNode(add)
+
+        var current = head
+
+        while (current != null){
+
+            if (current.node == before){
+
+                newNode.previous = current.previous
+                newNode.next = current
+
+                current.previous?.next = newNode
+                current.previous = newNode
+
+                size++
+                return true
+            }
+
+            current = current.next
+        }
+
+        return false
+    }
+
     fun removeFromFront(): DoubleNode<T>? {
 
         if (isEmpty) return null
-
         val removedNode = head
         val nextNode = head?.next
 
@@ -122,5 +149,10 @@ fun main(args: Array<String>) {
     doubleLinkedList.printList()
 
     println("The removed node ${doubleLinkedList.removeFromEnd()} \nsize: ${doubleLinkedList.size}")
+    doubleLinkedList.printList()
+
+    val tyrion = Employee("Tyrion", "Lanister", 4772)
+
+    doubleLinkedList.addBefore(tyrion, rosa)
     doubleLinkedList.printList()
 }
