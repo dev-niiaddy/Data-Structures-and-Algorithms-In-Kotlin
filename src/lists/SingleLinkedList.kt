@@ -101,5 +101,4 @@ fun main(args: Array<String>) {
     integerList.insertSorted(4)
 
     integerList.printList()
-
 }
