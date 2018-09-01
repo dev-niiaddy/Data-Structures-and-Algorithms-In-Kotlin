@@ -10,16 +10,16 @@ class SingleLinkedList<T> {
     val isEmpty
         get() = head == null
 
-    fun addToFront(node: T) {
+    fun addToFront(value: T) {
 
-        val newNode = Node(node)
+        val newNode = Node(value)
         newNode.next = head
         head = newNode
 
         size++
     }
 
-    fun removeFromFront(): Node<T>? {
+    fun removeFromFront(): T? {
 
         if (isEmpty) return null
 
@@ -30,7 +30,7 @@ class SingleLinkedList<T> {
 
         removedNode?.next = null
 
-        return removedNode
+        return removedNode?.node
     }
 
 
