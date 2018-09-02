@@ -10,8 +10,8 @@ class LinkedStack<T> {
     fun push(value: T) {
         linkedList.push(value)
     }
-    fun pop() {
-        linkedList.pop()
+    fun pop(): T {
+        return linkedList.pop()
     }
 
     fun peek(): T {
