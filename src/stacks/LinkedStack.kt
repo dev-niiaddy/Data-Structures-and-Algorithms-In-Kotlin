@@ -22,7 +22,7 @@ class LinkedStack<T> {
         val listIterator = linkedList.iterator()
 
         while (listIterator.hasNext()) {
-            print("${listIterator.next()}, ")
+            print("${listIterator.next()} > ")
         }
     }
 }
