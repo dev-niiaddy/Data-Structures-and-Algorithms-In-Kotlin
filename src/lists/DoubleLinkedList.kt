@@ -1,5 +1,7 @@
 package lists
 
+import java.lang.IllegalArgumentException
+
 class DoubleLinkedList<T> {
 
     private var head: DoubleNode<T>? = null
@@ -49,9 +51,9 @@ class DoubleLinkedList<T> {
 
         var current = head
 
-        while (current != null){
+        while (current != null) {
 
-            if (current.node == before){
+            if (current.node == before) {
 
                 newNode.previous = current.previous
                 newNode.next = current
@@ -67,6 +69,21 @@ class DoubleLinkedList<T> {
         }
 
         return false
+    }
+
+    fun addAt(node: T, position: Int) {
+
+        if (isEmpty || position > size) throw IllegalArgumentException(
+                "Position: $position cannot be greater than the size: $size of the list")
+
+        var currentNode = head
+
+        for (i in 0 until  position) currentNode = currentNode?.next
+
+        val newNode = DoubleNode(node)
+        currentNode?.previous?.next = newNode
+        newNode.next = currentNode
+        currentNode?.previous = newNode
     }
 
     fun removeFromFront(): DoubleNode<T>? {
@@ -102,6 +119,20 @@ class DoubleLinkedList<T> {
         removedNode?.previous = null
 
         return removedNode
+    }
+
+    fun removeAt(position: Int) {
+
+        if (isEmpty || position > size) throw IllegalArgumentException(
+                "Position: $position cannot be greater than the size: $size of the list")
+
+
+        var currentNode = head
+
+        for (i in 0 until  position) currentNode = currentNode?.next
+
+        currentNode?.previous?.next = currentNode?.next
+        currentNode?.next?.previous = currentNode?.previous
     }
 
 
@@ -154,5 +185,13 @@ fun main(args: Array<String>) {
     val tyrion = Employee("Tyrion", "Lanister", 4772)
 
     doubleLinkedList.addBefore(tyrion, rosa)
+    doubleLinkedList.printList()
+
+    val positionEmployee = Employee("James", "Gosling", 1452)
+    doubleLinkedList.addAt(positionEmployee, 2)
+    println("Added at position 2")
+    doubleLinkedList.printList()
+    println("Removed at position 0")
+    doubleLinkedList.removeAt(0)
     doubleLinkedList.printList()
 }
